@@ -7,6 +7,12 @@ $ id
 uid=1000(system) gid=1000(system) groups=1000(system),1065(reserved_disk),3009(readproc) context=u:r:system_app:s0
 ```
 
+### Aliases to make your life easier:
+By default, everything is black/white only which can get pretty annoying quickly. Enable color and extra information in the `ls` command using:
+```
+alias ls="ls -la --color"
+```
+
 ## I got access to system, what can I do?
 
 ### Enable Multi-user on unsupported devices
@@ -15,6 +21,24 @@ You can enable Multi-User support on any android device (even ones like Samsung 
 $ setprop persist.sys.max_users 15000 # Sets the max users to 15000 (extremely overkill)
 $ setprop persist.sys.show_multiuserui 1 # Tells Android to show the multiuserui (you can access this in the pull-down notification area, usually near the settings button)
 ```
+
+### Access to `/data/system/*`:
+This is a extremely powerful place in your system. It includes **A LOT** of system information and protected databases. This includes files such as `appops.xml` which is where a lot of app info and whatnot is stored.
+
+### Direct r/w to `system`, `secure`, and `global` settings.
+You can find the db files at `/data/system/users/0`, like `/data/system/users/0/settings_global.xml`.
+
+### Force profile owner
+**This is untested**
+
+You can write to `/data/system/users/0`, which means that you can make a file called `/data/system/users/0/profile_owner.xml` with the following content:
+```
+<?xml version=’1.0’ encoding=’utf-8’ standalone=’yes’ ?>
+```
+Which (from what I can tell) will make Device Admins profile owners (?????) (untested)
+
+## What system cannot access
+System is prevented from r/w/x on `/data/local/tmp`. This means that any binaries you want to run (like the `exp.so` used to throw the shell) must be included as a "library" in a installed app.
 
 ## Below is technical information on what it can access:
 ## Properties:
