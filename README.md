@@ -1,6 +1,19 @@
 # Android System
 System (usually Linux UID 1000) is a special user that bypasses many permission checks in android. This user is highly priviledged and is what runs apps like Settings. This user can access many protected areas of your device. Below is stuff you can do if you get access to System (either by an exploit in Android (like [CVE 31317](https://github.com/oddbyte/CVE-2024-31317)), or by a exploit in a specific app that has runs as the System shared UID (like the [Samsung TTS exploit](https://www.google.com/search?q=samsung+tts+shell)).
 
+If you have access to System and run `id` you should get back something like this:
+```
+$ id
+uid=1000(system) gid=1000(system) groups=1000(system),1065(reserved_disk),3009(readproc) context=u:r:system_app:s0
+```
+
+## I got access to system, what can I do?
+You can enable Multi-User support on any android device (even ones like Samsung which do not show this feature to users by default) using the following commands:
+```
+$ setprop persist.sys.max_users 15000 # Sets the max users to 15000 (extremely overkill)
+$ setprop persist.sys.show_multiuserui 1 # Tells Android to show the multiuserui (you can access this in the pull-down notification area, usually near the settings button)
+```
+
 ## Below is technical information on what it can access:
 ## Properties:
 `bluetooth.*`
