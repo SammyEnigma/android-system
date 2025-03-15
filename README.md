@@ -8,6 +8,8 @@ uid=1000(system) gid=1000(system) groups=1000(system),1065(reserved_disk),3009(r
 ```
 
 ## I got access to system, what can I do?
+
+### Enable Multi-user on unsupported devices
 You can enable Multi-User support on any android device (even ones like Samsung which do not show this feature to users by default) using the following commands:
 ```
 $ setprop persist.sys.max_users 15000 # Sets the max users to 15000 (extremely overkill)
