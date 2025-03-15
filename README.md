@@ -102,35 +102,63 @@ ctl_bugreport_prop
 
 ### Read/Write Access
 
-`system_app_data_file` (full create/read/write permissions)
+1. `system_app_data_file` (full create/read/write permissions)
 
-`misc_user_data_file` (full create/read/write permissions)
+`/data/data/[system apps]` (system_app_data_file)
 
-`anr_data_file` (create/read/write permissions)
+2. `misc_user_data_file` (full create/read/write permissions)
 
-`connectivityblob_data_file` (read/write permissions)
+`/data/misc/user` (misc_user_data_file)
 
-`cgroup` files (write permissions)
+3. `anr_data_file` (create/read/write permissions)
 
-`cgroup_v2` files and directories (write permissions)
+`/data/anr` (anr_data_file)
+
+4. `connectivityblob_data_file` (read/write permissions)
+
+`/data/connectivity/blobs` (connectivityblob_data_file)
+
+5. `cgroup` files (write permissions)
+
+`/sys/fs/cgroup/*` (cgroup files)
+
+6. `cgroup_v2` files and directories (write permissions)
+
+`/sys/fs/cgroup/v2/*` (cgroup_v2 files)
 
 ### Read-Only Access
 
-`apex_data_file` (search permission)
+1. `apex_data_file` (search permission)
 
-`staging_data_file` (read permissions)
+`/apex/*` (apex_data_file - search only (no read))
 
-`wallpaper_file` (read permissions)
+2. `staging_data_file` (read permissions)
 
-`icon_file` (read permissions)
+`/data/staging/*` (staging_data_file)
 
-`asec_apk_file` (read permissions)
+3. `wallpaper_file` (read permissions)
 
-`vendor_boot_ota_file` (read directory permissions)
+`/data/system/users/*/wallpaper` (wallpaper_file)
 
-`system_dlkm_file` (limited access - search, getattr, open, read)
+4. `icon_file` (read permissions)
 
-`proc_version` (read permissions)
+`/data/system/users/*/icons` (icon_file)
+
+5. `asec_apk_file` (read permissions)
+
+`/data/app-asec/*/pkg.apk` (asec_apk_file)
+
+6. `vendor_boot_ota_file` (read directory permissions)
+
+`/vendor_boot_ota` (vendor_boot_ota_file)
+
+7. `system_dlkm_file` (limited access - search, getattr, open, read)
+
+`/system_dlkm/etc/NOTICE.xml.gz` (system_dlkm_file)
+
+8. `proc_version` (read permissions)
+
+`/proc/version` (proc_version)
 
 ### Special Access
 
