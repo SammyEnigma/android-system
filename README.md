@@ -1,2 +1,9 @@
-# android-system
-detailed description on what the system user (in its SELinux context) can access
+# Properties:
+`bluetooth.*`
+`persist.bluetooth.*`
+`debug.*`
+`net.*`
+`sys.*`
+`persist.sys.*`
+`log.tag.*`
+`persist.log.tag`
