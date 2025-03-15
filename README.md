@@ -14,6 +14,7 @@ alias ls="ls -la --color"
 ```
 
 ## I got access to system, what can I do?
+First, you need to understand something: All of the following data is based on ASOP. Things **WILL** be different / not exist. Because this is all "hidden", it really isnt standard and has no reason to be. Therefore all vendors that pull from ASOP will most likely modify properties, not include specific paths, etc.
 
 ### Enable Multi-user on unsupported devices
 You can enable Multi-User support on any android device (even ones like Samsung which do not show this feature to users by default) using the following commands:
