@@ -16,6 +16,15 @@ alias ls="ls -la --color"
 ## I got access to system, what can I do?
 First, you need to understand something: All of the following data is based on ASOP. Things **WILL** be different / not exist. Because this is all "hidden", it really isnt standard and has no reason to be. Therefore all vendors that pull from ASOP will most likely modify properties, not include specific paths, etc.
 
+### Carrier features:
+On certian Samsung devices, you can access `/optics/configs/carriers/*`. This allows you to edit carrier features. Use [this decoder](https://github.com/fei-ke/OmcTextDecoder) to decode the .xml files, and read https://xdaforums.com/t/custom-csc-features-in-samsung-using-system-shell-guide-no-root.4631423/ for instructions on how to use this. Read the comments for features. For example, adding
+```
+    <CscFeature_Setting_SupportRealTimeNetworkSpeed>TRUE</CscFeature_Setting_SupportRealTimeNetworkSpeed>
+    <CscFeature_Common_SupportZProjectFunctionInGlobal>TRUE</CscFeature_Common_SupportZProjectFunctionInGlobal>
+```
+to the features will show you the device network speed in the notification area.
+Read more here: https://xdaforums.com/t/csc-features-10-jan13-enable-secret-csc-features.2033894/
+
 ### Enable Multi-user on unsupported devices
 You can enable Multi-User support on any android device (even ones like Samsung which do not show this feature to users by default) using the following commands:
 ```
