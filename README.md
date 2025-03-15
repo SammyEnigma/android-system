@@ -23,7 +23,7 @@ $ setprop persist.sys.show_multiuserui 1 # Tells Android to show the multiuserui
 ```
 
 ### Access to `/data/system/*`:
-This is a extremely powerful place in your system. It includes **A LOT** of system information and protected databases. This includes files such as `appops.xml` which is where a lot of app info and whatnot is stored.
+This is a extremely powerful place in your system. It includes **A LOT** of system information and protected databases.
 
 ### Direct r/w to `system`, `secure`, and `global` settings.
 You can find the db files at `/data/system/users/0`, like `/data/system/users/0/settings_global.xml`.
