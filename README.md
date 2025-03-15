@@ -96,4 +96,31 @@ Control properties
 
 ctl_default_prop
 ctl_bugreport_prop
-``` 
+```
+
+## Filesystem:
+
+### Read/Write Access
+
+`system_app_data_file` (full create/read/write permissions)
+`misc_user_data_file` (full create/read/write permissions)
+`anr_data_file` (create/read/write permissions)
+`connectivityblob_data_file` (read/write permissions)
+`cgroup` files (write permissions)
+`cgroup_v2` files and directories (write permissions)
+
+### Read-Only Access
+
+`apex_data_file` (search permission)
+`staging_data_file` (read permissions)
+`wallpaper_file` (read permissions)
+`icon_file` (read permissions)
+`asec_apk_file` (read permissions)
+`vendor_boot_ota_file` (read directory permissions)
+`system_dlkm_file` (limited access - search, getattr, open, read)
+`proc_version` (read permissions)
+
+### Special Access
+
+keystore and wifi_key keystores (various operations)
+Can connect to system_server UDP sockets
