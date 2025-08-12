@@ -1,5 +1,5 @@
 # Android System
-System (usually Linux UID 1000) is a special user that bypasses many permission checks in android. This user is highly priviledged and is what runs apps like Settings. This user can access many protected areas of your device. Below is stuff you can do if you get access to System (either by an exploit in Android (like [CVE 31317](https://github.com/oddbyte/CVE-2024-31317)), or by a exploit in a specific app that has runs as the System shared UID (like the [Samsung TTS exploit](https://www.google.com/search?q=samsung+tts+shell)).
+System (usually Linux UID 1000) is a special user that bypasses many permission checks in android. This user is highly privileged and is what runs apps like Settings. This user can access many protected areas of your device. Below is stuff you can do if you get access to System (either by an exploit in Android (like [CVE 31317](https://github.com/oddbyte/CVE-2024-31317)), or by a exploit in a specific app that has runs as the System shared UID (like the [Samsung TTS exploit](https://www.google.com/search?q=samsung+tts+shell)).
 
 If you have access to System and run `id` you should get back something like this:
 ```
